@@ -1,0 +1,22 @@
+<!-- Template for showing the results. -->
+
+{% extends "base.html" %}{% block content %}
+    {% if products == none %}
+        <h1>No results were found for the searched product</h1>
+        {% else %}
+            <div class="results">
+                {% for product in makeup_data %}
+                    <a href = "/"></a><br>
+                    <div class="product-card">
+                        <img src="{{ product['image_link'] }}" alt="{{ product['name'] }}">
+                        <h2>{{ product['name'] }}</h2>
+                        <p><strong>Brand:</strong> {{ product['brand'] }}</p>
+                        <p><strong>Price:</strong> {{ product['price_sign'] }} {{ product['price'] }} {{ product['currency'] }}</p>
+                        <p><strong>Rating:</strong> {{ product['rating'] }}</p>
+                        <p><strong>Description:</strong> {{ product['description'] }}</p>
+                        <p><strong>Tags:</strong> {{ ', '.join(product['tag_list']) if product['tag_list'] else 'No tags available.' }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+{% endblock %}

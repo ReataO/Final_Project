@@ -1,0 +1,20 @@
+<!-- Base template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}" />
+</head>
+<body>
+    <header>
+        <h1>Makeup Product Explorer</h1>
+    </header>
+
+    <div class="application">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>Data from <a href= "http://makeup-api.herokuapp.com/api/v1/products.json/">Make-Up API</a></p>
+    </footer>
+</body>
+</html>

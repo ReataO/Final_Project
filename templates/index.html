@@ -1,0 +1,16 @@
+<!-- Template containing the form  -->
+{% extends "base.html" %} {% block content %}
+    <form action='{{url_for("get_makeup_info")}}' method="post">
+        <div>
+            <label for="product_type">Enter a makeup type:</label><br>
+            <input type="text" id="product_type" name="makeupType" required/><br>
+
+            <label for="tag_list">Enter a makeup tag:</label><br>
+            <input type="text" id="tag_list" name="tag_list" /><br>
+        </div>
+        <div>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+{% endblock %}
