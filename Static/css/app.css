@@ -1,0 +1,92 @@
+body {
+    font-family: URW Chancery L, cursive;
+    background-color: white;
+
+}
+h1 {
+    text-align: center;
+    color: #7A795D;
+}
+p {
+    text-align: center;
+}
+form > div {
+    background-color: white;
+    border-radius: 4px;
+    margin: auto;
+    width: 50%;
+    padding: 30px;
+}
+input {
+    padding: 4px 4px;
+    width: 100%;
+}
+input[type="checkbox"] {
+    margin: auto;
+    width: 20%;
+    padding: 0px;
+}
+button {
+    width:15%;
+    padding: 5px;
+    background-color: #CCCA9C;
+    color: white;
+    border: 2px #def1e5;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #a3d0b3;
+}
+
+table {
+    background-color: #CCCA9C;
+    width: 100%;
+    padding: 10px;
+    border-top:1px solid black;
+
+}
+
+th {
+  border: 1px solid #e7d6d9;
+  padding: 8px;
+  text-align: left;
+  background-color: #e7d6d9;
+  font-weight: bold;
+}
+td {
+    background-color: white;
+}
+td img {
+
+    max-width: 100%;
+    height: auto;
+}
+td a {
+    color: #CCCA9C;
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #CCCA9C;
+    text-decoration: underline;
+}
+h2 {
+
+    font-size: 14px;
+}
+label2 {
+    font-size: 14px;
+    color: #dec6ca;
+}
+
+
+
+
+body {
+    background: -moz-radial-gradient(0% 2%, circle, rgba(96, 16, 48, 0) 9px, #e7d6d9 10px, rgba(96, 16, 48, 0) 11px), -moz-radial-gradient(100% 100%, rgba(96, 16, 48, 0) 9px, #CCCA9C 10px, rgba(96, 16, 48, 0) 11px), none;
+    background: -webkit-radial-gradient(0% 2%, circle, rgba(96, 16, 48, 0) 9px, #e7d6d9 10px, rgba(96, 16, 48, 0) 11px), -webkit-radial-gradient(100% 100%, rgba(96, 16, 48, 0) 9px, #CCCA9C 10px, rgba(96, 16, 48, 0) 11px), none;
+    background: -ms-radial-gradient(0% 2%, circle, rgba(96, 16, 48, 0) 9px, #e7d6d9 10px, rgba(96, 16, 48, 0) 11px), -ms-radial-gradient(100% 100%, rgba(96, 16, 48, 0) 9px, #CCCA9C 10px, rgba(96, 16, 48, 0) 11px), none;
+    background: -o-radial-gradient(0% 2%, circle, rgba(96, 16, 48, 0) 9px, #e7d6d9 10px, rgba(96, 16, 48, 0) 11px), -o-radial-gradient(100% 100%, rgba(96, 16, 48, 0) 9px, #CCCA9C 10px, rgba(96, 16, 48, 0) 11px), none;
+    background: radial-gradient(0% 2%, circle, rgba(96, 16, 48, 0) 9px, #e7d6d9 10px, rgba(96, 16, 48, 0) 11px), radial-gradient(100% 100%, rgba(96, 16, 48, 0) 9px, #CCCA9C 10px, rgba(96, 16, 48, 0) 11px), none;
+    background-size: 20px 20px;
+}

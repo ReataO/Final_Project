@@ -1,13 +1,39 @@
-<!-- Template containing the form  -->
 {% extends "base.html" %} {% block content %}
-    <form action='{{url_for("get_makeup_info")}}' method="post">
-        <div>
-            <label for="product_type">Enter a makeup type:</label><br>
-            <input type="text" id="product_type" name="makeupType" required/><br>
+    <form action='/results' method="post">
 
-            <label for="tag_list">Enter a makeup tag:</label><br>
-            <input type="text" id="tag_list" name="tag_list" /><br>
+        <div>
+            <label for="product_type">Enter a makeup product type:</label><br>
+            <label2 for="product_type">Product Types Include: Blush, Bronzer, Eyebrow, Eyeliner, Eyeshadow, Foundation,
+                Lip liner, Lipstick, Mascara, Nail Polish </label2><br>
+            <input type="text" id="product_type" name="makeupType" required/><br>
         </div>
+        <div>
+           <label for="products">Select product tag:</label><br>
+           <select id="products" name="products">
+               <option value="">--Select Skin Specific Needs--</option>
+               <option value="alcohol free">Alcohol free</option>
+               <option value="CertClean">CertClean</option>
+               <option value="Chemical Free">Chemical Free</option>
+               <option value="Dairy Free">Dairy Free</option>
+               <option value="EWG Verified">EWG Verified</option>
+               <option value="Gluten Free">Gluten Free</option>
+               <option value="Hypoallergenic">Hypoallergenic</option>
+               <option value="No Talc">No Talc</option>
+               <option value="Non-GMO">Non-GMO</option>
+               <option value="Peanut Free Product">Peanut Free Product</option>
+               <option value="silicone free">silicone free</option>
+               <option value="Sugar Free">Sugar Free</option>
+               <option value="oil free">Oil free</option>
+               <option value="water free">Water free</option>
+               <option value="">--Select Products Ethical Parameters--</option>
+               <option value="EcoCert">EcoCert</option>
+               <option value="Fair Trade">Fair Trade</option>
+               <option value="Organic", value ="USDA Organic">Organic</option>
+               <option value="Vegan">Vegan</option>
+               <option value="cruelty free">Cruelty free</option>
+
+           </select><br>
+       </div>
         <div>
             <button type="submit">Search</button>
         </div>

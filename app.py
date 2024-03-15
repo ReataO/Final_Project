@@ -1,33 +1,33 @@
 
 
 from flask import Flask, render_template, request
-from makeup import makeup_info
+import makeup
 
 app = Flask(__name__)
-#app.secret_key = 'your_secret_key'
-
 
 @app.route('/')
 def index():
-
-#    information = makeup_info(makeup_data)
     return render_template('index.html')
 
 
-@app.route('/get_makeup_info', methods=["GET", "POST"])
-def get_makeup_info():
-    if request.method == 'POST':
-        product_type = request.form['product_type']
-        tag_list = request.form['tag_list']
+@app.route('/results', methods=["GET", "POST"])
+def results():
+  if request.method == 'POST':
+    product_type = request.form['makeupType']
+    wanted_tag = request.form.get('products')
 
-        results = makeup.makeup_data(product_type, tag_list=tag_list)
-        return render_template('results.html', results=results)
+    data = makeup.get_makeup_data(product_type)
 
-            # In case of an error or no makeup data
-
+    if wanted_tag:
+        makeups = makeup.makeup_info(data, wanted_tag)
     else:
-        return "Wrong HTTP method", 400
-#        return render_template('index.html', makeup_data=None)
+        makeups = makeup.makeup_info(data)
+    return render_template('results.html', makeups=makeups)
+
+  else:
+    return "Wrong HTTP method", 400
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+##FFF5F3

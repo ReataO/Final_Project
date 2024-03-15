@@ -1,22 +1,37 @@
-<!-- Template for showing the results. -->
-
 {% extends "base.html" %}{% block content %}
-    {% if products == none %}
-        <h1>No results were found for the searched product</h1>
-        {% else %}
-            <div class="results">
-                {% for product in makeup_data %}
-                    <a href = "/"></a><br>
-                    <div class="product-card">
-                        <img src="{{ product['image_link'] }}" alt="{{ product['name'] }}">
-                        <h2>{{ product['name'] }}</h2>
-                        <p><strong>Brand:</strong> {{ product['brand'] }}</p>
-                        <p><strong>Price:</strong> {{ product['price_sign'] }} {{ product['price'] }} {{ product['currency'] }}</p>
-                        <p><strong>Rating:</strong> {{ product['rating'] }}</p>
-                        <p><strong>Description:</strong> {{ product['description'] }}</p>
-                        <p><strong>Tags:</strong> {{ ', '.join(product['tag_list']) if product['tag_list'] else 'No tags available.' }}</p>
-                    </div>
+    {% if makeups %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Tags</th>
+                    <th>Category</th>
+                    <th>Product Type</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in makeups %}
+                <tr>
+                    <td><img src="{{ product.Image }}"></td>
+                    <td><h2>{{ product.Name }}</h2></td>
+                    <td><p><strong></strong> {{ product.Brand}}</p></td>
+                    <td><p><strong></strong> {{ product.Price}}</p></td>
+                    <td><p><strong></strong> {{ product.Description }}</p></td>
+                    <td><p><strong></strong> {{ (product.tags) if product.tags else 'No tags available.' }}</p></td>
+                    <td><p><strong></strong> {{ product.category }}</p></td>
+                    <td><p><strong></strong> {{ product['Product Type'] }}</p></td>
+                    <td><p><strong></strong> <a href="{{ product.Link }}">{{ product.Name }}</a></p></td>
+                </tr>
                 {% endfor %}
-            </div>
-        {% endif %}
+            </tbody>
+        </table>
+    <p><a href="http://127.0.0.1:5000">Return to Main Menu</a></p>
+    {% else %}
+        <h1>No results were found for the searched product</h1>
+    {% endif %}
 {% endblock %}

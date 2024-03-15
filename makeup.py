@@ -16,16 +16,19 @@ def safe_get(url):
         print(f"Error: {exceptions}")
         return None
 
-def makeup_info(makeup_data):
+def makeup_info(makeup_data, wanted_tag=None):
     results = []
     if makeup_data:
         for product in makeup_data:
             product_info = {
                 'Name': product['name'],
-                'Brand': product['name'],
+                'Brand': product['brand'],
                 'Product Type': product['product_type'],
-                'category': product['category']
+                'category': product['category'],
+                'Image': product['image_link']
+
             }
+
 
             price = product['price_sign']
             if price:
@@ -41,11 +44,15 @@ def makeup_info(makeup_data):
 
             tags = product['tag_list']
             if tags:
-                product_info["tags"] = ', '.join(tags)
+                if wanted_tag:
+                    if wanted_tag in tags:
+                        product_info["tags"] = ', '.join(tags)
+                        results.append(product_info)
+                else:
+                    product_info["tags"] = ', '.join(tags)
+                    results.append(product_info)
             else:
-                "No tags"
-
-            results.append(product_info)
+                product_info["tags"] = "No tags"
 
         return results
 
